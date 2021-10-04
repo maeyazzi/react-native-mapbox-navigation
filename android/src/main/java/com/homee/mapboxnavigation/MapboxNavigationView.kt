@@ -100,7 +100,7 @@ class MapboxNavigationView(private val context: ThemedReactContext) : Navigation
                     .profile(RouteUrl.PROFILE_DRIVING)
                     .steps(true)
                     .voiceInstructions(!this.mute)
-                    .language('es-MX')
+                    .language("es-MX")
                     .voiceUnits(DirectionsCriteria.METRIC)
                     .build(), routesReqCallback)
         } catch (ex: Exception) {
