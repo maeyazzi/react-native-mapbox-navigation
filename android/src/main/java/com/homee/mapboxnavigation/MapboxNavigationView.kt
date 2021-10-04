@@ -17,6 +17,7 @@ import com.mapbox.navigation.core.MapboxNavigationProvider
 import com.mapbox.navigation.core.directions.session.RoutesRequestCallback
 import com.mapbox.navigation.core.trip.session.LocationObserver
 import com.mapbox.navigation.core.trip.session.RouteProgressObserver
+import com.mapbox.api.directions.v5.DirectionsCriteria
 import com.mapbox.navigation.ui.NavigationView
 import com.mapbox.navigation.ui.NavigationViewOptions
 import com.mapbox.navigation.ui.OnNavigationReadyCallback
@@ -99,6 +100,8 @@ class MapboxNavigationView(private val context: ThemedReactContext) : Navigation
                     .profile(RouteUrl.PROFILE_DRIVING)
                     .steps(true)
                     .voiceInstructions(!this.mute)
+                    .language('es-MX')
+                    .voiceUnits(DirectionsCriteria.METRIC)
                     .build(), routesReqCallback)
         } catch (ex: Exception) {
             sendErrorToReact(ex.toString())
